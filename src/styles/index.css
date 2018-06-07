@@ -1,0 +1,28 @@
+@import url(bootstrap-reboot.css);
+body {
+  color: #343a40; }
+
+.container {
+  padding: 15px; }
+
+.btn {
+  color: #f8f9fa;
+  background-color: transparent;
+  padding: 1.5rem;
+  border: none;
+  min-width: 16rem; }
+  .btn:active, .btn:focus {
+    outline: 0; }
+  .btn.btn-facebook {
+    background-color: #4c6ef5; }
+    .btn.btn-facebook:hover, .btn.btn-facebook:focus {
+      background-color: #3b5bdb; }
+  .btn.btn-wake {
+    background-color: #fa5252; }
+    .btn.btn-wake:hover, .btn.btn-wake:focus {
+      background-color: #e03131; }
+  .btn.btn-woke {
+    background-color: #ff8787;
+    transition: background-color 0.25s ease; }
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "histories": {
+      ".read": true,
+      "$room": { 
+        "$uid": {
+          ".write": "$uid === auth.uid"
+        }
+      }
+    }
+  }
+}

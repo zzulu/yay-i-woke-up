@@ -1,0 +1,42 @@
+body {
+  color: $oc-gray-8;
+}
+
+.container {
+  padding: 15px;
+}
+
+.btn {
+  color: $oc-gray-0;
+  background-color: transparent;
+  padding: 1.5rem;
+  border: none;
+  min-width: 16rem;
+
+  &:active,
+  &:focus {
+    outline: 0;
+  }
+
+  &.btn-facebook {
+    background-color: $oc-indigo-6;
+
+    &:hover,
+    &:focus {
+      background-color: $oc-indigo-8;
+    }
+  }
+
+  &.btn-wake {
+    background-color: $oc-red-6;
+    &:hover,
+    &:focus {
+      background-color: $oc-red-8;
+    }
+  }
+
+  &.btn-woke {
+    background-color: $oc-red-4;
+    transition: background-color 0.25s ease;
+  }
+}
