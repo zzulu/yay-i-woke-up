@@ -30,9 +30,9 @@ class History extends Component {
           <div key={date}>
             <h3>{date}</h3>
             <ul>
-              {Object.keys(histories[date]).map((uid)=>(
-                <li key={uid}>
-                  <b>{histories[date][uid].name}</b> woke up at {new Date(histories[date][uid].wokeUpTime).toLocaleTimeString()}
+              {histories[date].map((user)=>(
+                <li key={user.key}>
+                  <b>{user.name}</b> woke up at {new Date(user.wokeUpTime).toLocaleTimeString()}
                 </li>
               ))}
             </ul>

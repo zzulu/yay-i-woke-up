@@ -19,7 +19,7 @@ class Home extends Component {
     const dd = d.getDate() < 10 ? `0${d.getDate()}` : `${d.getDate()}`
     const todayToString = `${d.getFullYear()}-${mm}-${dd}`;
     if(!nextProps.currentUser.loading && nextProps.histories) {
-      if(nextProps.histories[todayToString] && nextProps.histories[todayToString][nextProps.currentUser.uid]) {
+      if(nextProps.histories[todayToString] && nextProps.histories[todayToString].filter((h)=>{ return h.key === nextProps.currentUser.uid; }).length > 0) {
         return {
           woke: true
         };
@@ -35,9 +35,7 @@ class Home extends Component {
     const dd = d.getDate() < 10 ? `0${d.getDate()}` : `${d.getDate()}`
     const todayToString = `${d.getFullYear()}-${mm}-${dd}`;
     const histories = { ...this.props.histories };
-    histories[todayToString] = {
-      [this.props.currentUser.uid]: { name: this.props.currentUser.name, wokeUpTime: n }
-    };
+    histories[todayToString] = [{ key: this.props.currentUser.uid, name: this.props.currentUser.name, wokeUpTime: n }, ...(histories[todayToString] || []) ];
     this.props.setHistory(histories);
   }
 
