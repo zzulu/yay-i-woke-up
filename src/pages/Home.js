@@ -14,7 +14,10 @@ class Home extends Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const d = new Date(); const todayToString = `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
+    const d = new Date();
+    const mm = d.getMonth() < 10 ? `0${d.getMonth()+1}` : `${d.getMonth()+1}`
+    const dd = d.getDate() < 10 ? `0${d.getDate()}` : `${d.getDate()}`
+    const todayToString = `${d.getFullYear()}-${mm}-${dd}`;
     if(!nextProps.currentUser.loading && nextProps.histories) {
       if(nextProps.histories[todayToString] && nextProps.histories[todayToString][nextProps.currentUser.uid]) {
         return {
@@ -27,7 +30,10 @@ class Home extends Component {
   }
 
   handleClick = () => {
-    const n = Date.now(); const d = new Date(n); const todayToString = `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
+    const n = Date.now(); const d = new Date(n);
+    const mm = d.getMonth() < 10 ? `0${d.getMonth()+1}` : `${d.getMonth()+1}`
+    const dd = d.getDate() < 10 ? `0${d.getDate()}` : `${d.getDate()}`
+    const todayToString = `${d.getFullYear()}-${mm}-${dd}`;
     const histories = { ...this.props.histories };
     histories[todayToString] = {
       [this.props.currentUser.uid]: { name: this.props.currentUser.name, wokeUpTime: n }
