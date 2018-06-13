@@ -2,10 +2,8 @@
   "rules": {
     "histories": {
       ".read": true,
-      "$room": { 
-        "$uid": {
-          ".write": "$uid === auth.uid"
-        }
+      "$date": {
+        ".write": "auth != null && newData.child('0').child('key').val() == auth.uid",
       }
     }
   }
